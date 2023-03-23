@@ -11,11 +11,6 @@
 
 /* GENERAL STUFF */
 
-html, body {
-
-    overflow-x: hidden;
-    position: relative;
-}
 body {
     
     background-color: #252525;
@@ -52,7 +47,6 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: left;
 
-    position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
 
@@ -70,6 +64,8 @@ body::-webkit-scrollbar {
     
         z-index: -1;
         width: 100%;
+        
+        overflow-x: hidden;
     }
     
     .TitleSVG {
@@ -99,6 +95,8 @@ body::-webkit-scrollbar {
         
         margin-left: 50vw;
         transform: translate(-50%);
+
+        overflow-x: hidden;
     }
     
     .TitleSVG {
