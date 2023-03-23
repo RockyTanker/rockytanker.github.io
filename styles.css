@@ -1,0 +1,114 @@
+/* STYLES DOT CSS */
+/* For any HTML coders inspecting my page, I am very sorry in advance :') */
+
+/* FONTS */
+
+@font-face {
+    font-family: Monocode Regular;
+    src: url(Assets/Fonts/Monocode\ Regular.ttf);
+}
+
+/* GENERAL STUFF */
+
+html {
+
+    overflow-x: hidden;
+}
+
+body {
+    
+    background-color: #252525;
+    margin: 0%;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    color: white;
+}
+
+body::-webkit-scrollbar {
+
+    display: none;
+}
+
+.Header {
+
+    width: 100%;
+
+    background: #555;
+    color: #f1f1f1;
+
+    overflow: hidden;
+    margin-top: -1%;
+
+    text-align: center;
+    background: #000000;
+    color: white;
+    border-bottom: 0.5vh solid #3d3d3d;
+
+    align-items: center;
+    display: flex;
+    justify-content: left;
+
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+
+    z-index: 3;
+}
+
+/* LANDSCAPED */
+
+@media (orientation: landscape) {
+
+    #BackgroundVideo {
+
+        pointer-events: none;
+        filter: brightness(20%);
+    
+        z-index: -1;
+        width: 100%;
+    }
+    
+    .TitleSVG {
+    
+        position: absolute;
+        
+        display: flex;
+        justify-content: center;
+        margin-top: 19%;
+    
+        width: 100vw;
+        z-index: 3;
+    }
+}
+
+/* PORTRAIT */
+
+@media (orientation: portrait) {
+
+    #BackgroundVideo {
+
+        pointer-events: none;
+        filter: brightness(20%);
+    
+        z-index: -1;
+        height: 100vh;
+        
+        margin-left: 50vw;
+        transform: translate(-50%);
+    }
+    
+    .TitleSVG {
+    
+        position: absolute;
+
+        display: flex;
+        justify-content: center;
+
+        width: 130%;
+        margin-left: -15%;
+        margin-top: 83vh;
+
+        z-index: 3;
+    }
+}

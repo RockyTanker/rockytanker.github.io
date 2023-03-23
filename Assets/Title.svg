@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2713 416">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 197.01px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+        font-family: Pointless, Pointless;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+
+      .cls-2 {
+        font-size: 94.44px;
+      }
+
+      .cls-3 {
+        fill: #fff;
+        font-family: Impact, Impact;
+        font-size: 96.75px;
+      }
+    </style>
+  </defs>
+  <g id="blur">
+    <image width="2460" height="299" xlink:href="Title1.png"/>
+    <image width="1272" height="191" transform="translate(1437 225)" xlink:href="Title2.png"/>
+    <image width="318" height="184" transform="translate(2395 104)" xlink:href="Title3.png"/>
+  </g>
+  <g>
+    <text class="cls-1" transform="translate(38.43 235.83)"><tspan x="0" y="0">ROCKYTANKER</tspan></text>
+    <text class="cls-3" transform="translate(1473.4 347.77)"><tspan x="0" y="0">scroll down to begin exploring</tspan></text>
+    <text class="cls-2" transform="translate(2433.48 237.39)"><tspan x="0" y="0">.tk</tspan></text>
+  </g>
+</svg>
