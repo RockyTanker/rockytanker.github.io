@@ -11,6 +11,12 @@
 
 /* GENERAL STUFF */
 
+html, body {
+
+    overflow-x: hidden;
+    position: relative;
+}
+
 body {
     
     background-color: #252525;
@@ -19,8 +25,6 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
     color: white;
-
-    overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -35,9 +39,6 @@ body::-webkit-scrollbar {
     background: #555;
     color: #f1f1f1;
 
-    overflow: hidden;
-    margin-top: -1%;
-
     text-align: center;
     background: #000000;
     color: white;
@@ -47,10 +48,9 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: left;
 
-    position: sticky;
-    top: 0;
+    position: fixed;
 
-    z-index: 3;
+    z-index: 2;
 }
 
 /* LANDSCAPED */
@@ -61,11 +61,7 @@ body::-webkit-scrollbar {
 
         pointer-events: none;
         filter: brightness(50%);
-    
-        z-index: -1;
         width: 100%;
-        
-        overflow-x: hidden;
     }
     
     .TitleSVG {
@@ -77,7 +73,7 @@ body::-webkit-scrollbar {
         margin-top: 19%;
     
         width: 100vw;
-        z-index: 3;
+        z-index: 1;
     }
 }
 
@@ -90,13 +86,10 @@ body::-webkit-scrollbar {
         pointer-events: none;
         filter: brightness(50%);
     
-        z-index: -1;
         height: 100vh;
         
         margin-left: 50vw;
         transform: translate(-50%);
-
-        overflow-x: hidden;
     }
     
     .TitleSVG {
@@ -110,6 +103,6 @@ body::-webkit-scrollbar {
         margin-left: -15%;
         margin-top: 83vh;
 
-        z-index: 3;
+        z-index: 1;
     }
 }
