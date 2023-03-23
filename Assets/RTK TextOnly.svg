@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2713 416">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2709 416">
   <defs>
     <style>
       .cls-1 {
@@ -12,5 +12,7 @@
       }
     </style>
   </defs>
-  <text class="cls-1" transform="translate(210.93 261.33)"><tspan x="0" y="0">ROCKYTANKER</tspan></text>
+  <g id="Title">
+    <text class="cls-1" transform="translate(210.93 261.33)"><tspan x="0" y="0">ROCKYTANKER</tspan></text>
+  </g>
 </svg>
