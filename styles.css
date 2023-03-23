@@ -61,7 +61,7 @@ body::-webkit-scrollbar {
     #BackgroundVideo {
 
         pointer-events: none;
-        filter: brightness(20%);
+        filter: brightness(50%);
     
         z-index: -1;
         width: 100%;
@@ -87,7 +87,7 @@ body::-webkit-scrollbar {
     #BackgroundVideo {
 
         pointer-events: none;
-        filter: brightness(20%);
+        filter: brightness(50%);
     
         z-index: -1;
         height: 100vh;
