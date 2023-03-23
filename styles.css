@@ -10,12 +10,6 @@
 
 /* GENERAL STUFF */
 
-html {
-
-    overflow-x: hidden;
-    width: 100%;
-}
-
 body {
     
     background-color: #252525;
@@ -24,6 +18,9 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
     color: white;
+
+    overflow-x: hidden;
+    width: 100%
 }
 
 body::-webkit-scrollbar {
