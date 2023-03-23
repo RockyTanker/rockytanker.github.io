@@ -11,6 +11,11 @@
 
 /* GENERAL STUFF */
 
+html, body {
+
+    overflow-x: hidden;
+    position: relative;
+}
 body {
     
     background-color: #252525;
