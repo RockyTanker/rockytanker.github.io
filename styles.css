@@ -31,27 +31,6 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-.Header {
-
-    width: 100vw;
-
-    background: #555;
-    color: #f1f1f1;
-
-    text-align: center;
-    background: #000000;
-    color: white;
-    border-bottom: 0.5vh solid #3d3d3d;
-
-    align-items: center;
-    display: flex;
-    justify-content: center;
-
-    position: fixed;
-
-    z-index: 2;
-}
-
 /* LANDSCAPED */
 
 @media (orientation: landscape) {
@@ -79,6 +58,36 @@ body::-webkit-scrollbar {
     
         width: 100vw;
         z-index: 1;
+        pointer-events: none;
+    }
+
+    .Cursor {
+
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        border: 1px solid white;
+        transition: all 200ms ease-out;
+        position: fixed;
+        pointer-events: none;
+        left: 0;
+        top: 0;
+        transform: translate(calc(-50% + 15px), -50%);
+        z-index: 100;
+    }
+
+    .Cursor2 {
+
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        background-color: white;
+        opacity: .3;
+        position: fixed;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        transition: width .3s, height .3s, opacity .3s;
+        z-index: 100;
     }
 }
 
