@@ -1,4 +1,4 @@
-// Cursor
+// Cursor (async update)
 
 var cursor = document.querySelector('.Cursor');
 var cursorinner = document.querySelector('.Cursor2');
