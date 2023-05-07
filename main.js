@@ -1,4 +1,4 @@
-// Cursor (async update)
+// Cursor
 
 var cursor = document.querySelector('.Cursor');
 var cursorinner = document.querySelector('.Cursor2');
@@ -11,6 +11,4 @@ document.addEventListener('mousemove', function(e){
 
     cursorinner.style.left = x + 'px';
     cursorinner.style.top = y + 'px';
-
-    console.log('WHAT')
 });
