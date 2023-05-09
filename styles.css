@@ -8,16 +8,19 @@
     src: url(Assets/Fonts/Monocode\ Regular.ttf);
 }
 
+/* VARIABLES */
+
 /* GENERAL STUFF */
 
 html, body {
 
     overflow-x: hidden;
+    overflow-y: hidden;
     position: relative;
 }
 
 body {
-    
+
     background-color: #252525;
     margin: 0%;
 
@@ -29,6 +32,19 @@ body {
 body::-webkit-scrollbar {
 
     display: none;
+}
+
+.Loading {
+
+    background-color: #191e30;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    text-align: center;
+    position: fixed;
+    z-index: 2;
+    transition: opacity 400ms ease-in-out;
+    font-family: Monocode Regular;
 }
 
 /* LANDSCAPED */
@@ -74,6 +90,7 @@ body::-webkit-scrollbar {
         top: 0;
         transform: translate(calc(-50% + 15px), -50%);
         z-index: 100;
+        opacity: 0%;
     }
 
     .Cursor2 {
@@ -88,6 +105,7 @@ body::-webkit-scrollbar {
         pointer-events: none;
         transition: width .3s, height .3s, opacity .3s;
         z-index: 100;
+        opacity: 0%;
     }
 }
 
