@@ -61,7 +61,7 @@ function FileUploaded(){
 
         if (file.type.match('image.*')) {
 
-            Output.innerHTML = '<img src="' + URL.createObjectURL(file) + '">'
+            Output.innerHTML = '<img src="' + URL.createObjectURL(file) + '" width=100%>'
         }
     }
 }
