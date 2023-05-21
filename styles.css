@@ -55,7 +55,9 @@ body::-webkit-scrollbar {
 
         pointer-events: none;
         filter: brightness(50%);
-        width: 100%;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
     }
     
     .RTKTextOnly {
@@ -70,7 +72,7 @@ body::-webkit-scrollbar {
         
         display: flex;
         justify-content: center;
-        margin-top: 19%;
+        margin-top: 37vh;
     
         width: 100vw;
         z-index: 1;
