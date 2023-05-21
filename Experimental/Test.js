@@ -42,6 +42,26 @@ function FileUploaded(){
 
     if (file) {
 
-        reader.readAsText(file);
+        Output.innerHTML = "Invalid FILETYPE :( <br> The file type: " + file.type + " <br><br> ACCEPTED FILES are images... videos... audio.... and text files... !!! <br> - TankerJKT"
+        
+        if (file.type.match('text.*')) {
+
+            reader.readAsText(file)
+        } 
+        
+        if (file.type.match('video.*')) {
+
+            Output.innerHTML = '<video src="' + URL.createObjectURL(file) + '" width=100% controls>'
+        }
+
+        if (file.type.match('audio.*')) {
+
+            Output.innerHTML = '<audio src="' + URL.createObjectURL(file) + '" controls>'
+        }
+
+        if (file.type.match('image.*')) {
+
+            Output.innerHTML = '<img src="' + URL.createObjectURL(file) + '">'
+        }
     }
 }
