@@ -51,7 +51,7 @@ function FileUploaded(){
         
         if (file.type.match('video.*')) {
 
-            Output.innerHTML = '<video src="' + URL.createObjectURL(file) + '" width=100% controls>'
+            Output.innerHTML = '<video src="' + URL.createObjectURL(file) + '" width=100% height=100% controls>'
         }
 
         if (file.type.match('audio.*')) {
@@ -61,7 +61,7 @@ function FileUploaded(){
 
         if (file.type.match('image.*')) {
 
-            Output.innerHTML = '<img src="' + URL.createObjectURL(file) + '" width=100%>'
+            Output.innerHTML = '<img src="' + URL.createObjectURL(file) + '" width=100% height=100%>'
         }
     }
 }
