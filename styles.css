@@ -8,6 +8,11 @@
     src: url(Assets/Fonts/Monocode\ Regular.ttf);
 }
 
+@font-face {
+    font-family: Gen Shin Gothic Heavy;
+    src: url(Assets/Fonts/Gen\ Shin\ Gothic\ Heavy.ttf);
+}
+
 /* VARIABLES */
 
 /* GENERAL STUFF */
@@ -42,9 +47,56 @@ body::-webkit-scrollbar {
     display: block;
     text-align: center;
     position: fixed;
-    z-index: 2;
+    z-index: 99;
     transition: opacity 400ms ease-in-out;
     font-family: Monocode Regular;
+}
+
+/* DRAFT */
+
+.MainHeader {
+
+    position: fixed;
+
+    z-index: 3;
+    width: 100vw;
+
+    padding-left: 1vw;
+    padding-top: 1vh; 
+    
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: left;
+
+    background-image: url(Assets/DropShadow.png);
+    background-size: contain;
+
+    height: 7vh;
+}
+
+#HeaderItem {
+
+    padding-left: 1vw; 
+    padding-right: 1vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+
+    font-family: Gen Shin Gothic Heavy;
+    transition: ease-in 200ms;
+}
+
+#HeaderItem:hover {
+
+    background-color: white;
+    color: black;
+    transition: ease-in 200ms;
+    filter: invert(0%) sepia(0%) saturate(7500%) hue-rotate(148deg) brightness(95%) contrast(103%);
+}
+
+#HeaderItem svg path {
+
+    fill: black;
 }
 
 /* LANDSCAPED */

@@ -27,23 +27,42 @@ document.addEventListener('mouseleave', function(){
 var body = document.body
 var Loading = document.querySelector('.Loading')
 
+var Loaded = false
+var Skipped = false // FOR SKIP LOAD CATEGORY
+
 function FinishLoading(){
 
     document.querySelector('html').style.overflowY = 'scroll'
     Loading.style.opacity = '0%'
+    
+    setTimeout(function(){Loading.remove()}, 2400)
 };
 
-document.addEventListener('load', () => {
+// ALT VERSION
 
-    console.log('The page is fully loaded.');
-    document.getElementById('LoadStatus').innerHTML = "Sucessfully loaded!"
-    setTimeout(FinishLoading, 2000)
-});
+document.onreadystatechange = () => {
+    if (document.readyState === "interactive" && Loaded == false && Skipped == false) {
+      
+        Loaded = true
+
+        document.getElementById('LoadStatus').innerHTML = "Successfully loaded!"
+        setTimeout(FinishLoading, 2000)
+
+        console.log("Loaded")
+    }
+  };
 
 // SKIP LOAD
 
 document.addEventListener('mousedown', function(){
 
-    document.getElementById('LoadStatus').innerHTML = "Loading skipped!"
-    setTimeout(FinishLoading, 2000)
+    if (Skipped == false && Loaded == false) {
+
+        Skipped = true
+
+        document.getElementById('LoadStatus').innerHTML = "Loading skipped!"
+        setTimeout(FinishLoading, 2000)
+
+        console.log("Skipped")
+    }
 })
