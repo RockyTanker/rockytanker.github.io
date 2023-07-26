@@ -1,68 +1,100 @@
-// Cursor
+// Hover Over Header Item
 
-var cursor = document.querySelector('.Cursor');
-var cursorinner = document.querySelector('.Cursor2');
+const ExtraHeader = document.querySelector(".ExtraHeader")
+const MainHeaderBG = document.getElementById("MainHeaderBG")
+var HeaderItemFocused = false
 
-document.addEventListener('mousemove', function(e){
-
-    var x = e.clientX;
-    var y = e.clientY;
-    cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
-
-    cursorinner.style.left = x + 'px';
-    cursorinner.style.top = y + 'px';
-
-    cursor.style.opacity = '100%'
-    cursorinner.style.opacity = '100%'
-});
-
-document.addEventListener('mouseleave', function(){
-
-    cursor.style.opacity = '0%'
-    cursorinner.style.opacity = '0%'
-});
-
-// LOAD
-
-var body = document.body
-var Loading = document.querySelector('.Loading')
-
-var Loaded = false
-var Skipped = false // FOR SKIP LOAD CATEGORY
-
-function FinishLoading(){
-
-    document.querySelector('html').style.overflowY = 'scroll'
-    Loading.style.opacity = '0%'
+function OnHover(Item) {
     
-    setTimeout(function(){Loading.remove()}, 2400)
-};
+    if (Item.className == "HeaderItem"){
 
-// ALT VERSION
+        Item.style["background-color"] = "white"
+        Item.style.color = "black"
 
-document.onreadystatechange = () => {
-    if (document.readyState === "interactive" && Loaded == false && Skipped == false) {
-      
-        Loaded = true
+        var rect = Item.getBoundingClientRect();
+        ExtraHeader.style.top = rect.bottom + "px"
+        ExtraHeader.style.left = rect.left + "px"
+        ExtraHeader.style.opacity = "100%"
 
-        document.getElementById('LoadStatus').innerHTML = "Successfully loaded!"
-        setTimeout(FinishLoading, 2000)
+        document.querySelector(".WindowFrame").style.opacity = "50%"
+        MainHeaderBG.style.opacity = "0%"
+        
+        HeaderItemFocused = true
+        LoadExtraHeader(Item.id)
 
-        console.log("Loaded")
+    } else if (Item.className == "ExtraHeader" && HeaderItemFocused == true){
+
+        ExtraHeader.style.opacity = "100%"
+
+        MainHeaderBG.style.opacity = "0%"
+        document.querySelector(".WindowFrame").style.opacity = "50%"
+
+        HeaderItemFocused = false
     }
-  };
+}
 
-// SKIP LOAD
+function OffHover(Item) {
 
-document.addEventListener('mousedown', function(){
+    if (Item.className == "HeaderItem") {
 
-    if (Skipped == false && Loaded == false) {
-
-        Skipped = true
-
-        document.getElementById('LoadStatus').innerHTML = "Loading skipped!"
-        setTimeout(FinishLoading, 2000)
-
-        console.log("Skipped")
+        Item.style["background-color"] = null
+        Item.style.color = "white"
     }
-})
+
+    document.querySelector(".WindowFrame").style.opacity = "0%"
+    ExtraHeader.style.opacity = "0%" 
+    MainHeaderBG.style.opacity = "100%"
+}
+
+// ExtraHeader Reader
+
+function LoadExtraHeader (ClassSelection) {
+
+    var CSTable = GetExtraHeaderInfo(ClassSelection)
+
+    // Reset elements first
+    ExtraHeader.innerHTML = " "
+
+    for (let i = 0; i < CSTable.length; i++) {
+
+        let NewElement = document.createElement("div")
+        NewElement.className = "ExhSelection"
+        NewElement.innerHTML = '<div class="Block"></div><h3>' + CSTable[i] + '</h3>'
+
+        ExtraHeader.append(NewElement)
+    }
+}
+
+/// Get data for ExtraHeader
+
+function GetExtraHeaderInfo (TypeOfCLSS) {
+
+    switch (TypeOfCLSS) {
+
+        case "Newsletter":
+
+            return ["Waiting for data", "Svilar is suing me"]
+            break;
+        
+        
+        case "MapQueue":
+
+            return ["About Map Queue", "View List", "Search", "Create new entry"]
+            break;
+        
+        case "MyWork":
+
+            return ["TRIA.os/FE2CM Related Works", "YouTube Related Works", "Project List"]
+            break;
+
+        case "About":
+
+            return ["Placeholder Video is from Remember the Flowers", "Myself", "Software I use", "Using my work?", "Commissions Policy"]
+            break;
+        
+        case "Contact":
+
+            return ["Get a Commission", "My Socials", "Discord Server"]
+            break;
+    }
+}

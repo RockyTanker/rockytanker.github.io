@@ -30,28 +30,32 @@
 
     <body>
 
-        <!-- LOADING SCREEN -->
-        <div class="Loading">
+        <!-- FRAME -->
 
-            <h1 id="LoadStatus" style="margin-top: 50vh;">Loading site</h1>
-            <p>Click anywhere to skip loading (added for debugging load issues)</p>
-        </div>
-
-        <!-- CURSOR -->
-
-        <div class="Cursor"></div>
-        <div class="Cursor2"></div>
+        <div class="WindowFrame"></div>
 
         <!-- HEADER -->
+        
+        <div id="MainHeaderBG"></div>
 
         <div class="MainHeader">
 
-            <object data="Assets/RTK White.svg" width="200vw" id="HeaderItem"></object>
-            <h3 id="HeaderItem">Newsletter</h1>
-            <h3 id="HeaderItem">Map Queue</h1>
-            <h3 id="HeaderItem">My Work</h1>
-            <h3 id="HeaderItem">About</h1>
-            <h3 id="HeaderItem">Contact</h2>
+            <object data="Assets/RTK White.svg" width="200vw" style="padding-right: 1vw; padding-left: 1vw;"></object>
+            <h3 class="HeaderItem" id="Newsletter" onmouseenter="OnHover(this)" onmouseleave="OffHover(this)">Newsletter</h3>
+            <h3 class="HeaderItem" id="MapQueue" onmouseenter="OnHover(this)" onmouseleave="OffHover(this)">Map Queue</h3>
+            <h3 class="HeaderItem" id="MyWork" onmouseenter="OnHover(this)" onmouseleave="OffHover(this)">My Work</h3>
+            <h3 class="HeaderItem" id="About" onmouseenter="OnHover(this)" onmouseleave="OffHover(this)">About</h3>
+            <h3 class="HeaderItem" id="Contact" onmouseenter="OnHover(this)" onmouseleave="OffHover(this)">Contact</h3>
+        </div>
+
+        <div class="ExtraHeader" onmouseenter="OnHover(this)" onmouseleave="OffHover(this)">
+
+            <div class="ExhSelection">
+
+                <div class="Block"></div>
+                <h3>Waiting for data</h3>
+            </div>
+
         </div>
 
         <!-- INTRO SCREEN -->
@@ -63,8 +67,10 @@
 
         <video autoplay muted loop id="BackgroundVideo">
             
-                <source src="Assets/Background Video.mp4" type="video/mp4">
+                <source src="Assets/RTFTS.webm" type="video/mp4">
         </video>
+
+        <!-- 2 -->
 
         <!-- CHEESEBURGERS -->
 

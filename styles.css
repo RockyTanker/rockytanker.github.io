@@ -22,7 +22,7 @@
 html, body {
 
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: scroll;
     position: relative;
 }
 
@@ -41,43 +41,46 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-.Loading {
-
-    background-color: #191e30;
-    width: 100vw;
-    height: 100vh;
-    display: block;
-    text-align: center;
-    position: fixed;
-    z-index: 99;
-    transition: opacity 400ms ease-in-out;
-    font-family: Monocode Regular;
-}
-
 /* DRAFT */
 
 .MainHeader {
-
-    position: fixed;
-
-    z-index: 3;
-    width: 100vw;
-
-    padding-left: 1vw;
-    padding-top: 1vh; 
     
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: left;
 
+    height: 7vh;
+    padding-left: 1vw;
+}
+
+#MainHeaderBG, .MainHeader {
+
+    position: fixed;
+
+    z-index: 4;
+    width: 100vw;
+    padding-top: 1vh;
+}
+
+#MainHeaderBG {
+
     background-image: url(Assets/DropShadow.png);
     background-size: contain;
 
-    height: 7vh;
+    transition: ease-out 200ms;
+    height: 11vh;
 }
 
-#HeaderItem {
+.Block {
+
+    background-color: white; 
+    width: 0.3vw; 
+    height: 4vh; 
+    margin-right: 1vw;
+}
+
+.HeaderItem {
 
     padding-left: 1vw; 
     padding-right: 1vw;
@@ -86,19 +89,65 @@ body::-webkit-scrollbar {
 
     font-family: Gen Shin Gothic Heavy;
     transition: ease-in 200ms;
+
+    user-select: none;
 }
 
-#HeaderItem:hover {
+.ExhSelection {
 
-    background-color: white;
-    color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: left;
+
     transition: ease-in 200ms;
-    filter: invert(0%) sepia(0%) saturate(7500%) hue-rotate(148deg) brightness(95%) contrast(103%);
+    padding-right: 1vw;
+    font-family: Gen Shin Gothic Heavy;
+    
+    height: 4vh;
 }
 
-#HeaderItem svg path {
+.ExhSelection:hover {
 
-    fill: black;
+    color: black;
+    background-color: white;
+}
+
+.WindowFrame {
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: black;
+    opacity: 0%;
+
+    position: fixed;
+    z-index: 3;
+    transition: ease-in-out 200ms;
+    pointer-events: none;
+}
+
+.ExtraHeader {
+
+    position: fixed;
+    z-index: 4;
+    transition: ease-in-out 200ms opacity;
+    opacity: 0;
+    padding-top: 1vh;
+    user-select: none;
+}
+
+#RevealSlide {
+
+    display: flex;
+    justify-content: center;
+
+    color: black;
+    font-family: Gen Shin Gothic Heavy;
+
+    width: 100vw;
+    height: 50vh;
+    background-color: white;
 }
 
 /* LANDSCAPED */
@@ -131,37 +180,6 @@ body::-webkit-scrollbar {
         width: 100vw;
         z-index: 1;
         pointer-events: none;
-    }
-
-    .Cursor {
-
-        width: 50px;
-        height: 50px;
-        border-radius: 100%;
-        border: 1px solid white;
-        transition: all 200ms ease-out;
-        position: fixed;
-        pointer-events: none;
-        left: 0;
-        top: 0;
-        transform: translate(calc(-50% + 15px), -50%);
-        z-index: 100;
-        opacity: 0%;
-    }
-
-    .Cursor2 {
-
-        width: 20px;
-        height: 20px;
-        border-radius: 100%;
-        background-color: white;
-        opacity: .3;
-        position: fixed;
-        transform: translate(-50%, -50%);
-        pointer-events: none;
-        transition: width .3s, height .3s, opacity .3s;
-        z-index: 100;
-        opacity: 0%;
     }
 }
 
