@@ -3,6 +3,7 @@ body {
     background-color: black;
     color: white;
     overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .Object, .ObjectExtra {
