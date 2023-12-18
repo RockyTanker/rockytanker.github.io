@@ -73,7 +73,7 @@ function GetExtraHeaderInfo (TypeOfCLSS) {
 
         case "Newsletter":
 
-            return ["Waiting for data", "Svilar is suing me"]
+            return GetTitle()
             break;
         
         
