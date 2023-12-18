@@ -1,12 +1,27 @@
-const fs = require("fs")
-
 var TitleTable = []
 
 function GetTitle() {
 
     if (TitleTable.length == 0){
+        
+        var url = 'https://raw.githubusercontent.com/RockyTanker/rockytanker.github.io/main/Data/Newsletter/1/Content';
 
-        TitleTable = [fetch("https://pastebin.com/raw/PHU02u0v")]
+        var Result;
+
+        fetch(url)
+        .then(function(response) {
+            
+            response.text().then(function(text) {
+            Result = text;
+            done();
+            });
+        });
+
+        function done() {
+
+            var split = Result.split("\n");
+            TitleTable = [split[0]]
+        };
 
         return TitleTable
 
