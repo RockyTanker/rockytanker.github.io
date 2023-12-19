@@ -34,6 +34,8 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
     color: white;
+
+    font-family: Gen Shin Gothic Heavy;
 }
 
 body::-webkit-scrollbar {
@@ -99,11 +101,10 @@ body::-webkit-scrollbar {
     align-items: center;
     flex-direction: row;
     justify-content: left;
-
-    transition: ease-in 200ms;
     padding-right: 1vw;
     font-family: Gen Shin Gothic Heavy;
-    
+    transition: ease-in 200ms;
+
     height: 4vh;
 }
 
@@ -111,6 +112,19 @@ body::-webkit-scrollbar {
 
     color: black;
     background-color: white;
+}
+
+.ExhSelection:active {
+
+    background-color: #c9c9c9;
+    transition: none;
+}
+
+.ExhSelection:not(:hover) {
+
+    color: rgb(255, 255, 255);
+    transition: ease-in 200ms;
+    background: none;
 }
 
 .WindowFrame {
@@ -148,6 +162,19 @@ body::-webkit-scrollbar {
     width: 100vw;
     height: 50vh;
     background-color: white;
+}
+
+#Welcome {
+
+    background-color: rgb(255, 255, 255);
+    height: 40vi;
+    width: 100vw;
+    margin-top: -0.5vh;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
 }
 
 /* LANDSCAPED */

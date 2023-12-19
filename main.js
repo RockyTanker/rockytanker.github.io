@@ -76,7 +76,6 @@ function GetExtraHeaderInfo (TypeOfCLSS) {
             return GetTitle()
             break;
         
-        
         case "MapQueue":
 
             return ["About Map Queue", "View List", "Search", "Create new entry"]
@@ -89,7 +88,7 @@ function GetExtraHeaderInfo (TypeOfCLSS) {
 
         case "About":
 
-            return ["Placeholder Video is from Remember the Flowers", "Myself", "Software I use", "Using my work?", "Commissions Policy"]
+            return ["Myself", "Software I use", "Copyright", "Commissions Policy"]
             break;
         
         case "Contact":
@@ -97,4 +96,16 @@ function GetExtraHeaderInfo (TypeOfCLSS) {
             return ["Get a Commission", "My Socials", "Discord Server"]
             break;
     }
+}
+
+// HeaderMouseDown
+
+function HeaderMouseDown(Element) {
+
+    Element.style = "background-color: #c9c9c9; transition: none; color: black;"
+}
+
+function HeaderMouseUp(Element) {
+
+    Element.style = "background-color: white; transition: 200ms; color: black;"
 }

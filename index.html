@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 
-<!-- OFFICIAL ROCKYTANKER PORTFOLIO WEBSITE -->
-<!-- For any HTML coders checking the site's code, I am very sorry in advance :') -->
-<!-- FOR ETHAN716167 AND KUROTOGI -->
-
 <html>
 
     <!-- CONFIGURATION -->
@@ -42,16 +38,16 @@
         <div class="MainHeader">
 
             <object data="Assets/RTK White.svg" width="200vw" style="padding-right: 1vw; padding-left: 1vw;"></object>
-            <h3 class="HeaderItem" id="Newsletter" onmouseenter="OnHover(this)" onmouseleave="OffHover(this)">Newsletter</h3>
-            <h3 class="HeaderItem" id="MapQueue" onmouseenter="OnHover(this)" onmouseleave="OffHover(this)">Map Queue</h3>
-            <h3 class="HeaderItem" id="MyWork" onmouseenter="OnHover(this)" onmouseleave="OffHover(this)">My Work</h3>
-            <h3 class="HeaderItem" id="About" onmouseenter="OnHover(this)" onmouseleave="OffHover(this)">About</h3>
-            <h3 class="HeaderItem" id="Contact" onmouseenter="OnHover(this)" onmouseleave="OffHover(this)">Contact</h3>
+            <h3 class="HeaderItem" id="Newsletter" onmouseenter="OnHover(this)" onmouseleave="OffHover(this)" onmousedown="HeaderMouseDown(this)" onmouseup="HeaderMouseUp(this)" onclick="Click(this)">Newsletter</h3>
+            <h3 class="HeaderItem" id="MapQueue" onmouseenter="OnHover(this)" onmouseleave="OffHover(this)" onmousedown="HeaderMouseDown(this)" onmouseup="HeaderMouseUp(this)" onclick="Click(this)">Map Queue</h3>
+            <h3 class="HeaderItem" id="MyWork" onmouseenter="OnHover(this)" onmouseleave="OffHover(this)" onmousedown="HeaderMouseDown(this)" onmouseup="HeaderMouseUp(this)" onclick="Click(this)">My Work</h3>
+            <h3 class="HeaderItem" id="About" onmouseenter="OnHover(this)" onmouseleave="OffHover(this)" onmousedown="HeaderMouseDown(this)" onmouseup="HeaderMouseUp(this)" onclick="Click(this)">About</h3>
+            <h3 class="HeaderItem" id="Contact" onmouseenter="OnHover(this)" onmouseleave="OffHover(this)" onmousedown="HeaderMouseDown(this)" onmouseup="HeaderMouseUp(this)" onclick="Click(this)" onm>Contact</h3>
         </div>
 
         <div class="ExtraHeader" onmouseenter="OnHover(this)" onmouseleave="OffHover(this)">
 
-            <div class="ExhSelection">
+            <div class="ExhSelection" onclick="Click(this)">
 
                 <div class="Block"></div>
                 <h3>Waiting for data</h3>
@@ -66,13 +62,21 @@
             <object data="Assets/Title.svg" width="70%"></object>
         </div>
 
-        <video autoplay muted loop id="BackgroundVideo">
+        <video autoplay muted playsinline loop id="BackgroundVideo">
             
                 <source src="Assets/RTFTS.webm" type="video/mp4">
         </video>
 
-        <!-- 2 -->
-        <div id="Welcome"></div>
+        <!-- Welcome -->
+        <div id="Welcome">
+
+            <img src="Assets/Images/Placeholder.jpg" width="25%"></img>
+            <div style="color: black; margin-left: 2vi; width: 30%;">
+                
+                <h1 style="font-size: 4vi;">Hello!</h1>
+                <p style="margin-top: -2vi; font-size: 1.5vi;">Welcome to ROCKYTANKER. You will find projects, news, and other stuff here.</p>
+            </div>
+        </div>
 
         <!-- CHEESEBURGERS -->
 
@@ -128,7 +132,10 @@
 
         <!-- SCRIPT -->
         <script type="text/javascript" src="main.js"></script>
-        <script type="text/javascript" src="newsletter.js"></script>
+
+        <!-- API -->
+        <script type="text/javascript" src="API/click.js"></script>
+        <script type="text/javascript" src="API/newsletter.js"></script>
 
     </body>
 </html>
