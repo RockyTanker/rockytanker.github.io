@@ -1,6 +1,17 @@
-/* Temporary */
-body::-webkit-scrollbar {
-    display: none;
+/* Fonts */
+@font-face {
+    font-family: 'Impact';
+    src: url(../assets/fonts/impact.ttf);
+}
+
+@font-face {
+    font-family: 'Gen Shin Gothic';
+    src: url(../assets/fonts/Gen\ Shin\ Gothic\ Heavy.ttf);
+}
+
+@font-face {
+    font-family: 'Cascadia Code';
+    src: url(../assets/fonts/CascadiaCode.ttf);
 }
 
 /* Header */
@@ -23,7 +34,7 @@ body::-webkit-scrollbar {
     border: none;
     color: white;
 
-    font-family: Gen Shin Gothic Heavy;
+    font-family: 'Gen Shin Gothic';
     font-size: 1.2rem;
 
     transition: ease-in 200ms;
@@ -81,7 +92,7 @@ body {
     scrollbar-width: none;
     color: white;
 
-    font-family: Gen Shin Gothic Heavy;
+    font-family: 'Gen Shin Gothic';
 }
 
 /* Footer */
@@ -120,9 +131,11 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 .footerList {
     font-size: 1rem;
-    font-family: 'Cascadia Code Extralight';
+    font-family: 'Cascadia Code';
+    font-weight: lighter;
     color: white;
     user-select: none;
 }
