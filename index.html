@@ -1,142 +1,176 @@
-<!DOCTYPE html>
-
 <html>
 
-    <!-- CONFIGURATION -->
+<!-- Head -->
+<head>
+    <title>RTK.NET</title>
 
-    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" type="image/x-icon" href="assets/Favicon.png">
+    
+    <!-- Embed -->
+    <meta content="RockyTanker" property="og:title" />
+    <meta content="My website for projects and other stuff" property="og:description" />
+    <meta content="https://rockytanker.net/" property="og:url" />
+    <meta content="" property="og:image" />
+    <meta content="#fc8403" data-react-helmet="true" name="theme-color" />
+</head>
 
-        <title>RTK</title>
-        <link rel="stylesheet" href="styles.css">
+<!-- Body -->
+<body>
+    <!-- Sitewide Header -->
+    <div class="header">
+        <div class="leftAligned headerBtns">
+            <a href="index.html">
+                <img src="assets/Logo.svg" width="50vw" style="padding: 0 1.5vw 0 1.5vw;"></img>
+            </a>
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="icon" type="image/x-icon" href="Assets/Images/Favicon.png">
-        
-        <!-- Embed -->
-        <meta content="RockyTanker" property="og:title" />
-        <meta content="My website for projects and other stuff" property="og:description" />
-        <meta content="https://rockytanker.net/" property="og:url" />
-        <meta content="https://rockytanker.net/Assets/Images/Favicon.png" property="og:image" />
-        <meta content="#fc8403" data-react-helmet="true" name="theme-color" />
-
-    </head>
-
-    <!-- CONTENT -->
-
-    <body>
-
-        <!-- FRAME -->
-
-        <div class="WindowFrame"></div>
-
-        <!-- HEADER -->
-        
-        <div id="MainHeaderBG"></div>
-
-        <div class="MainHeader">
-
-            <object data="Assets/Branding/Logo.svg" width="70vw" style="padding-right: 1.5vw; padding-left: 1vw;"></object>
-            <h3 class="HeaderItem" id="Newsletter" onmouseenter="OnHover(this)" onmouseleave="OffHover(this)" onmousedown="HeaderMouseDown(this)" onmouseup="HeaderMouseUp(this)" onclick="Click(this)">Newsletter</h3>
-            <h3 class="HeaderItem" id="MapQueue" onmouseenter="OnHover(this)" onmouseleave="OffHover(this)" onmousedown="HeaderMouseDown(this)" onmouseup="HeaderMouseUp(this)" onclick="Click(this)">Map Queue</h3>
-            <h3 class="HeaderItem" id="MyWork" onmouseenter="OnHover(this)" onmouseleave="OffHover(this)" onmousedown="HeaderMouseDown(this)" onmouseup="HeaderMouseUp(this)" onclick="Click(this)">My Work</h3>
-            <h3 class="HeaderItem" id="About" onmouseenter="OnHover(this)" onmouseleave="OffHover(this)" onmousedown="HeaderMouseDown(this)" onmouseup="HeaderMouseUp(this)" onclick="Click(this)">About</h3>
-            <h3 class="HeaderItem" id="Contact" onmouseenter="OnHover(this)" onmouseleave="OffHover(this)" onmousedown="HeaderMouseDown(this)" onmouseup="HeaderMouseUp(this)" onclick="Click(this)" onm>Contact</h3>
+            <a href="projects/home.html" class="headerBtn">Projects</a>
+            <a href="flood-wizard/submit.html" class="headerBtn">Map Request</a>
+            <a href="https://workshop.rockytanker.net" class="headerBtn">Workshop</a>
+            <a href="contact.html" class="headerBtn">Contact</a>
         </div>
 
-        <div class="ExtraHeader" onmouseenter="OnHover(this)" onmouseleave="OffHover(this)">
+        <div class="rightAligned socials">
+            <a class="headerImgBtn" id="youTube" href="https://youtube.com/RockyTanker">
+                <img src="assets/YouTube.svg" width="30vh">
+            </a>
+            <a class="headerImgBtn" id="twitter" href="https://X.com/RockyTanker">
+                <img src="assets/X.svg" width="30vh">
+            </a>
+            <a class="headerImgBtn" id="roblox" href="https://www.roblox.com/communities/34445741">
+                <img src="assets/Roblox.svg" width="30vh">
+            </a>
+            <a class="headerImgBtn" id="discord" href="https://discord.gg/Rf5HaC48Ma">
+                <img src="assets/Discord.svg" width="30vh">
+            </a>
+        </div>
+    </div>
 
-            <div class="ExhSelection" onclick="Click(this)">
+    <!-- Cover -->
+    <video autoplay muted playsinline loop id="backgroundVideo" onload="getCover()">
+    </video>
 
-                <div class="Block"></div>
-                <h3>Waiting for data</h3>
+    <div class="coverLayout">
+        <div class="coverTags">
+        </div><br>
+        <div class="coverDiv"></div>
+        <a class="coverTitle">Placeholder</a>
+        <div class="coverDesc">Placeholder</div>
+    </div>
+
+    <!-- Placeholder -->
+    <div>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+        <p>cheeseburger</p>
+    </div>
+
+<!-- Footer -->
+<div class="footer">
+    <div class="footerClms">
+        <div class="footerClm" style="padding-right: 0vw; text-align: right;">>>>
+            <div class="footerList footerSpecialList">
+                <img src="assets/footerLogo.svg"><br><br>
+                2024 ROCKYTANKER. All copyrighted assets displayed, such as logos and trademarks, are property of their respective owners and is subject to fair use.<br><br>
+
+                <b>Contact:</b><br>
+                contact@rockytanker.net
             </div>
-
         </div>
 
-        <!-- INTRO SCREEN -->
+        <div class="footerClm">01
+            <div class="footerList">
+                <div class="footerClmTitle">CONNECT</div><br>
 
-        <div class="TitleSVG">
-
-            <object data="Assets/Branding/Title.svg" width="70%"></object>
-        </div>
-
-        <video autoplay muted playsinline loop id="BackgroundVideo">
-            
-                <source src="Assets/RTFTS.webm" type="video/mp4">
-        </video>
-
-        <!-- Welcome -->
-        <div id="Welcome">
-
-            <img src="Assets/Images/Placeholder.jpg" width="25%"></img>
-            <div style="color: black; margin-left: 2vi; width: 30%;">
-                
-                <h1 style="font-size: 4vi;">Hello!</h1>
-                <p style="margin-top: -2vi; font-size: 1.5vi;">Welcome to ROCKYTANKER. You will find projects, news, and other stuff here.</p>
+                <a href="https://discord.gg/Rf5HaC48Ma">Discord Server</a><br>
+                <a href="https://www.roblox.com/communities/34445741">Roblox Group</a><br>
+                <a href="https://X.com/RockyTanker">X (Inactive)</a><br>
+                <a href="https://youtube.com/RockyTanker">YouTube</a><br>
+                <a href="https://bsky.app/profile/rockytanker.net">Bluesky</a>
             </div>
         </div>
 
-        <!-- CHEESEBURGERS -->
+        <div class="footerClm">02
+            <div class="footerList">
+                <div class="footerClmTitle">SITE MAP</div><br>
 
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
-        <p>cheeseburger</p>
+                <a href="projects/home.html">Project Archive</a><br>
+                <a href="flood-wizard/submit.html">Flood Wizard</a><br>
+                <a href="https://workshop.rockytanker.net">Mapmaker's Workshop</a>
+            </div>
+        </div>
+        <div class="footerClm">03
+            <div class="footerList">
+                <div class="footerClmTitle">SPECIAL LINKS</div><br>
 
-        <!-- SCRIPT -->
-        <script type="text/javascript" src="main.js"></script>
+                <a href="https://www.roblox.com/games/6311279644">Play TRIA.os</a><br>
+                <a href="https://www.roblox.com/games/738339342">Play Flood Escape 2</a><br>
+                <a href="https://www.roblox.com/games/13162974187">Play loft tower 2</a>
+            </div>
+        </div>
 
-        <!-- API -->
-        <script type="text/javascript" src="API/click.js"></script>
-        <script type="text/javascript" src="API/newsletter.js"></script>
+        <div class="footerClm secretCategory">04
+            <div class="footerList">
+                <div class="footerClmTitle">SKEBILABS</div><br>
 
-    </body>
+                <a href="">Experimental</a><br>
+                <a href="https://onlinelibrary.wiley.com/journal/1753318X">Journal for Flood Research</a>
+            </div>
+        </div>
+    </div>
+</div>
+    <script type="text/javascript" src="scripts/index.js"></script>
+</body>
+
 </html>
