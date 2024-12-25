@@ -1,6 +1,17 @@
-/* Temporary */
-body::-webkit-scrollbar {
-    color: white;
+/* Fonts */
+@font-face {
+    font-family: Impact;
+    src: url(../assets/fonts/impact.ttf);
+}
+
+@font-face {
+    font-family: 'Gen Shin Gothic';
+    src: url(../assets/fonts/Gen\ Shin\ Gothic\ Heavy.ttf);
+}
+
+@font-face {
+    font-family: 'Cascadia Code';
+    src: url(../assets/fonts/CascadiaCode.ttf);
 }
 
 body {
@@ -61,7 +72,7 @@ body {
             font-size: 1em;
 
             border-radius: 100rem;
-            padding: 0.4rex 0.7rem;
+            padding: 0.2rem 0.7rem;
             margin: 0 1% 1% 0;
 
             text-transform: uppercase;
