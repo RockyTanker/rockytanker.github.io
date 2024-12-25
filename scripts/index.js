@@ -34,7 +34,6 @@ function getCover() {
 
     backgroundVideo.appendChild(source);
     backgroundVideo.play();
-    backgroundVideo.style.filter = 'brightness(50%)';
 
     coverTitle.textContent = coverResult[0]
     coverTitle.href = "./projects/page?id=" + coverResult[4]
