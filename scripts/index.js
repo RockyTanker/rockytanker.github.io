@@ -21,30 +21,21 @@ function getCover() {
     var source = document.createElement('source');
     var coverResult = [];
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 4; i++) {
 
-        if (i == 2) {
+        if (i == 1) {
             var tagTable = line[8 + i].split(", ")
             coverResult.push(tagTable)
         } else {coverResult.push(line[8 + i]);}
     }
 
-    source.setAttribute('src', coverResult[1]);
-    source.setAttribute('type', 'video/mp4');
-
-    backgroundVideo.appendChild(source);
-    backgroundVideo.load();
-    backgroundVideo.play();
-
-    backgroundVideo.style.filter = 'brightness(50%)'
-
     coverTitle.textContent = coverResult[0]
     coverTitle.href = "./projects/page?id=" + coverResult[4]
 
-    coverDesc.textContent = coverResult[3]
+    coverDesc.textContent = coverResult[2]
 
     // Get tags
-    const Tags = coverResult[2]
+    const Tags = coverResult[1]
 
     for (let i = 0; i < Math.round(Tags.length / 4); i++) {
         var tagSelect = i * 4
