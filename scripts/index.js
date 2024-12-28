@@ -33,6 +33,7 @@ function getCover() {
     source.setAttribute('type', 'video/mp4');
 
     backgroundVideo.appendChild(source);
+    backgroundVideo.load();
     backgroundVideo.play();
 
     backgroundVideo.style.filter = 'brightness(50%)'
