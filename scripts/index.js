@@ -1,8 +1,20 @@
+// Standard Functions
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+}
+
+function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+        if ((new Date().getTime() - start) > milliseconds){
+        break;
+}}}
+
 // Fetch cover article
 const backgroundVideo = document.getElementById("backgroundVideo")
-const coverTitle = document.getElementsByClassName("coverTitle")[0]
-const coverDesc = document.getElementsByClassName("coverDesc")[0]
-const coverTags = document.getElementsByClassName("coverTags")[0]
+const coverTitle = document.getElementById("coverTitle")
+const coverDesc = document.getElementById("coverDesc")
+const coverTags = document.getElementById("coverTags")
 
 const url = 'https://raw.githubusercontent.com/RockyTanker/rtk_data/main/projectArchive/index';
 var result
@@ -13,8 +25,7 @@ fetch(url)
     result = text;
 
     getCover()
-    });
-});
+});});
 
 function getCover() {
     var line = result.split("\n");
@@ -30,8 +41,7 @@ function getCover() {
     }
 
     coverTitle.textContent = coverResult[0]
-    coverTitle.href = "./projects/page?id=" + coverResult[4]
-
+    coverTitle.href = coverResult[3]
     coverDesc.textContent = coverResult[2]
 
     // Get tags
@@ -49,5 +59,40 @@ function getCover() {
 
         coverTags.appendChild(newTagInstance)
         console.log("complet!")
-    }
+}};
+
+// Typewriter
+const greetingMessage = document.getElementById("greeting")
+const greetings = ["Hello! hiiii", ":3 hii", "hello bro...", "sup g"]
+const greeting = greetings[getRndInteger(0, greetings.length)]
+
+var i = 0;
+var speed1 = 50;
+var speed2 = 10;
+var greetDebounce = false
+
+function typeGreeting() {
+    if (i < greeting.length) {
+        greetingMessage.innerHTML += greeting.charAt(i);
+        i++;
+        setTimeout(typeGreeting, speed1);
+}};
+
+function isElementIntoView(el) { 
+    var e = document.querySelector(el);
+    var rect = e.getBoundingClientRect();
+    return window.innerHeight-rect.top >= 200; 
+};
+
+if (isElementIntoView("#greeting") && greetDebounce == false) {
+    greetDebounce = true
+    greetingMessage.innerText = "   "
+    typeGreeting()
 }
+
+window.addEventListener("scroll", function(){
+    if (isElementIntoView("#greeting") && greetDebounce == false) {
+        greetDebounce = true
+        greetingMessage.innerText = "   "
+        typeGreeting()
+}})  

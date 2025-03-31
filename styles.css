@@ -1,17 +1,31 @@
 /* Fonts */
 @font-face {
     font-family: 'Impact';
-    src: url(../assets/fonts/impact.ttf);
+    src: url(./assets/fonts/impact.ttf);
 }
 
 @font-face {
     font-family: 'Gen Shin Gothic';
-    src: url(../assets/fonts/Gen\ Shin\ Gothic\ Heavy.ttf);
+    src: url(./assets/fonts/Gen\ Shin\ Gothic\ Heavy.ttf);
 }
 
 @font-face {
     font-family: 'Cascadia Code';
-    src: url(../assets/fonts/CascadiaCode.ttf);
+    src: url(./assets/fonts/CascadiaCode.ttf);
+}
+
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url(./assets/fonts/RobotoSlab-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Roboto Slab Extrabold';
+    src: url(./assets/fonts/RobotoSlab-ExtraBold.ttf);
+}
+/* Scrollbar */
+::-webkit-scrollbar-track {
+    background: none;
 }
 
 /* Header */
@@ -93,6 +107,11 @@ body {
     color: white;
 
     font-family: 'Gen Shin Gothic';
+}
+
+.addPadding {
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 /* Footer */
