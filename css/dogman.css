@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'Comic Sans';
+    src: url(../assets/fonts/comic.ttf);
+}
+
+.game {
+    font-family: 'Comic Sans';
+    font-size: 3vh;
+    margin: 5%;
+}
+
+#title {
+    float: left;
+}
+#score {
+    float: right;
+}
+
+#gameSpace {
+    background-color: black;
+    height: 70vh;
+}
+
+#flashbang {
+    background-image: url(../assets/clickthedogman/explosion.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    z-index: 9999999;
+}

@@ -2,20 +2,32 @@
 <header>
     <title>Click the Dogman</title>
 
-    <link rel="icon" type="image/x-icon" href="../assets/dogman.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/x-icon" href="../assets/clickthedogman/sillyDogman.png">
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/dogman.css">
 
     <!-- Embed -->
     <meta content="Click the Dogman" property="og:title" />
     <meta content="click the dogman" property="og:description" />
     <meta content="https://rockytanker.net/" property="og:url" />
-    <meta content="" property="og:image" />
+    <meta content="https://rockytanker.net/assets/clickthedogman/sillyDogman.png" property="og:image" />
     <meta content="#fc8403" data-react-helmet="true" name="theme-color" />
 </header>
 <body>
+
+<!-- Game -->
+<div id="flashbang"></div>
+<section class="game">
+    <div id="headerBoard">
+        <p id="title">Click the Dogman</p>
+        <p id="score">Score: 0</p>
+    </div>
     <br><br>
-    WHO ARE YOU........ IM NOT FINISHED!!!!!!!!!!!
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div id="gameSpace"></div>
+</section>
 
 <!-- Footer -->
 <section class="footer">
@@ -66,5 +78,6 @@
                 <a href="https://onlinelibrary.wiley.com/journal/1753318X">Journal for Flood Research</a>
         </div></div></div></div>
 </section>
+<script type="text/javascript" src="../scripts/dogman.js"></script>
 </body>
 </html>
