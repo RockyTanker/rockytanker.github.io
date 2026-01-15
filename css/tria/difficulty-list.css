@@ -1,0 +1,238 @@
+@font-face {
+    font-family: "Gontserrat Regular";
+    src: url(../../assets/fonts/Gontserrat\ Regular.ttf);
+}
+
+@font-face {
+    font-family: "Oxanium Regular";
+    src: url(../../assets/fonts/Oxanium\ Regular.ttf);
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+body {
+    font-family: "Gontserrat Regular";
+}
+
+body html {
+  height: 100%;
+}
+
+.map {
+    padding: 3%;
+    margin: 3% 5%;
+    background-color: #00000086;
+    
+    border-style: dashed;
+    border-color: #a7a7a7;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+    .youtubeVideo {
+        align-self: center;
+    }
+
+    /* KEEP THIS DISABLED UNLESS YOU NEED TO EDIT SMTH */
+    .map#template {
+        display: none;
+    }
+
+    .map .infoLayout {
+        padding-left: 2%;
+
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+        .infoLayout #mapName p {
+            display: inline;
+            margin-block: unset;
+            font-size: 5rex;
+        }
+            .infoLayout #mapName #rating {
+                font-family: "Oxanium Regular";
+                color: rgb(255, 73, 73);
+        }
+
+.addPadding {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.difficultyGroup {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    height: 50px;
+}
+
+    .difficultyGroup .difficultyIcon {
+        height: 100%;
+        max-width: 40px;
+
+        display: flex;
+        align-items: center;
+    }
+
+        .difficultyIcon img {
+            width: 100%;
+            float: right;
+        }
+
+    .difficultyGroup p {
+        padding-left: 10px;
+        padding-right: 2%;
+        font-size: large;
+        opacity: 50%;
+    }
+        .difficultyGroup p#exemption {
+            size: 50rem;
+            opacity: 100%;
+            padding-right: 5%;
+            float: right;
+            justify-content: right;
+            white-space: nowrap;
+        }
+
+    .difficultyGroup .horizontalDivider {
+        padding-left: 10px;
+        width: 100%;
+        height: 4px;
+        background-image: linear-gradient(90deg, #ffffff 0%, #ffffff00 100%);
+    }
+
+#main {
+    /* Parallax */
+    background-image: url("../../assets/TRIA/DifficultyListBG.png");
+    height: 100%;
+    width: 100%;
+    position: absolute;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#header {
+    background-color: black;
+    height: 70px;
+    width: 100%;
+
+    /* Border */
+    border-image-slice: 1;
+    border-bottom: 5px solid;
+    border-image: linear-gradient(90deg, #c800e9 0%, #ffb100 100%) 1;
+
+    display: block
+}
+
+    #headerLeft {
+        padding-left: 5%;
+
+        float: left;
+        justify-content: left;
+        
+        display: flex;
+        align-items: center;
+
+        height: 100%;
+    }
+
+    #headerRight {
+        padding-right: 5%;
+
+        float: right;
+        justify-content: right;
+        
+        display: flex;
+        align-items: center;
+
+        height: 100%;
+    }
+
+    #diffListLogo {
+        height: 60%;
+    }
+
+    #headerRight a {
+        padding: 20px;
+        font-size: 1.4rem;
+        transition: ease-in 200ms;
+    }
+
+    #headerRight a:hover {
+        background-color: white;
+        color: black;
+    }
+
+    #headerRight a:active {
+        transition: none;
+        background-color: #a7a7a7;
+    }
+
+#scrollers {
+    padding: 3% 5%;
+    display: flex;
+    flex-direction: row;
+}
+
+    #listScroller {
+        width: 70%;
+    }
+
+    #bulletin {
+        width: 30%;
+    }
+
+#buttons {
+    display: none;
+}
+
+/* Downscale 1 */
+@media screen and (max-width: 895px) {
+    
+    #headerLeft {
+        padding-left: 5%;
+        padding-right: 5%;
+
+        float: none;
+        justify-content: center;
+        
+        display: flex;
+        align-items: center;
+
+        height: 100%;
+    }
+    
+    #headerRight {
+        display: none;
+    }
+
+    #bulletin, #verticalDivider {
+        display: none;
+    }
+
+    #listScroller {
+        width: 100%;
+    }
+
+    #buttons {
+        display: flex;
+    }
+
+    .map {
+        flex-direction: column;
+    }
+
+    .youtubeVideo {
+        width: 100%;
+        height: auto;
+    }
+}
