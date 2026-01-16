@@ -74,16 +74,14 @@ function compileData() {
 
         // Check if current difficulty has changed
         var mainDifficulty = Math.floor(mapData["Overview"][0])
-        if (mainDifficulty != (currentDifficulty - 1)) {
+
+        if (mainDifficulty != (currentDifficulty + 1)) {
             currentDifficulty = mainDifficulty - 1
+            var difficultyGroup = document.querySelector(diffIds[7 - mainDifficulty])
 
-            document.querySelector("#listScroller")
+            document.querySelector("#listScroller").appendChild(difficultyGroup)
+            difficultyGroup.style.display = "flex"
         }
-        
-        var difficultyGroup = document.querySelector(diffIds[7 - mainDifficulty])
-
-        document.querySelector("#listScroller").appendChild(difficultyGroup)
-        difficultyGroup.style.display = "flex"
 
         map.style.display = "flex"
         map.id = i
@@ -130,3 +128,49 @@ var dataLog = [
         Victors: ""
     }
 ]
+
+// Switch page on mobile
+var currentPage = "list"
+
+function switchPage(viewSection) {
+    switch (viewSection) {
+        case "list":
+            currentPage = "list"
+            document.querySelector("#buttons").querySelector("#viewList").className = "active"
+            document.querySelector("#buttons").querySelector("#viewBulletin").className = ""
+
+            document.querySelector("#scrollers").querySelector("#listScroller").style.display = "block"
+            document.querySelector("#scrollers").querySelector("#bulletin").style.display = "none"
+            break;
+        case "bulletin":
+            currentPage = "bulletin"
+            document.querySelector("#buttons").querySelector("#viewList").className = ""
+            document.querySelector("#buttons").querySelector("#viewBulletin").className = "active"
+    
+            document.querySelector("#scrollers").querySelector("#listScroller").style.display = "none"
+            document.querySelector("#scrollers").querySelector("#bulletin").style.display = "block"
+            break;
+    }   
+}
+
+// In case of switch failure
+addEventListener("resize", function() {
+    if (window.innerWidth > 1042) {
+        document.querySelector("#scrollers").querySelector("#listScroller").style.display = "block"
+        document.querySelector("#scrollers").querySelector("#bulletin").style.display = "block"
+    } else if (window.innerWidth <= 1042) {
+        if (currentPage == "list") {
+            document.querySelector("#buttons").querySelector("#viewList").className = "active"
+            document.querySelector("#buttons").querySelector("#viewBulletin").className = ""
+
+            document.querySelector("#scrollers").querySelector("#listScroller").style.display = "block"
+            document.querySelector("#scrollers").querySelector("#bulletin").style.display = "none"
+        } else {
+            document.querySelector("#buttons").querySelector("#viewList").className = ""
+            document.querySelector("#buttons").querySelector("#viewBulletin").className = "active"
+    
+            document.querySelector("#scrollers").querySelector("#listScroller").style.display = "none"
+            document.querySelector("#scrollers").querySelector("#bulletin").style.display = "block"
+        }
+    }
+})

@@ -3,6 +3,12 @@
     src: url(../../assets/fonts/Gontserrat\ Regular.ttf);
 }
 
+    @font-face {
+    font-family: "Gontserrat Semibold";
+    src: url(../../assets/fonts/Gontserrat\ Semibold.ttf);
+}
+
+
 @font-face {
     font-family: "Oxanium Regular";
     src: url(../../assets/fonts/Oxanium\ Regular.ttf);
@@ -23,16 +29,79 @@ body html {
   height: 100%;
 }
 
-#footer {
+footer {
     width: 100%;
-    height: 40px; /* sample height only */
     background-color: black;
     
     /* Border */
     border-image-slice: 1;
     border-top: 10px solid;
     border-image: linear-gradient(90deg, #ffb100 0%, #c800e9 100%) 1;
+
+    display: flex;
+    justify-content: space-between;
 }
+
+    footer #leftFooter {
+        display: flex;
+        flex-direction: row;
+        padding: 2% 5%;
+    }
+    
+        footer #leftFooter img {
+            height: 150px;
+        }  
+
+        .footerSection {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-left: 5%;
+        }
+
+            .footerSection #footerButtons {
+                padding-top: 20%;
+                display: flex;
+                flex-direction: column;
+                white-space: nowrap;
+            }
+
+                #footerButtons .specialText {
+                    color: #c800e9;
+                }
+
+                #footerButtons .disabled {
+                    color: #949494;
+                }
+
+        #footerTitle {
+            line-height: 1.7rem;
+        }
+
+            #footerTitle #code {
+                opacity: 50%;
+                font-size: 2rem;
+                font-family: "Oxanium Regular";
+            }
+
+            #footerTitle #label {
+                opacity: 50%;
+                font-size: 1.8rem;
+                font-family: "Gontserrat Semibold";
+            }
+
+    footer #rightFooter {
+        display: flex;
+        flex-direction: row;
+        padding: 2% 5%;
+        max-width: 20%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+        #rightFooter p {
+        padding-top: 5%;
+    }
 
 .map {
     padding: 3%;
@@ -144,22 +213,19 @@ body html {
 
 #header {
     background-color: black;
-    height: 10%;
+    height: 7%;
     width: 100%;
-
-    /* Border */
+    
     border-image-slice: 1;
     border-bottom: 5px solid;
     border-image: linear-gradient(90deg, #c800e9 0%, #ffb100 100%) 1;
 
-    display: block
+    display: flex;
+    justify-content: space-between;
 }
 
     #headerLeft {
         padding-left: 5%;
-
-        float: left;
-        justify-content: left;
         
         display: flex;
         align-items: center;
@@ -169,9 +235,6 @@ body html {
 
     #headerRight {
         padding-right: 5%;
-
-        float: right;
-        justify-content: right;
         
         display: flex;
         align-items: center;
@@ -206,10 +269,12 @@ body html {
 }
 
     #listScroller {
+        display: block;
         width: 70%;
     }
 
     #bulletin {
+        display: block;
         width: 30%;
     }
 
@@ -218,24 +283,25 @@ body html {
 }
 
 /* Downscale 1 */
-@media screen and (max-width: 1149px) {
+@media screen and (max-width: 1042px) {
     
-    #headerLeft {
-        padding-left: 5%;
-        padding-right: 5%;
-
-        float: none;
+    #header {
         justify-content: center;
-        
-        display: flex;
-        align-items: center;
+    }
 
-        height: 100%;
-    }
-    
-    #headerRight {
-        display: none;
-    }
+        #headerLeft {
+            padding-left: 5%;
+            padding-right: 5%;
+            
+            display: flex;
+            align-items: center;
+
+            height: 100%;
+        }
+        
+        #headerRight {
+            display: none;
+        }
 
     #bulletin, #verticalDivider {
         display: none;
@@ -247,7 +313,34 @@ body html {
 
     #buttons {
         display: flex;
+        justify-content: space-around;
+        padding: 3% 4%;
     }
+
+        #buttons div {
+            padding: 1%;
+            margin: 2%;
+            background-color: rgba(7, 11, 34, 0.5);
+
+            border-style: solid;
+            border-color: #ffffff;
+            border-radius: 20px;
+
+            font-size: 1.3rem;
+            width: 100%;
+
+            text-align: center;
+            transition: ease-in 100ms;
+        }
+
+        #buttons div:hover {
+            background-color: rgb(255, 255, 255);
+            color: black;
+        }
+
+        #buttons .active {
+            background-color: rgba(170, 170, 170, 0.5);
+        }
 
     .map {
         flex-direction: column;
@@ -256,5 +349,45 @@ body html {
     .youtubeVideo {
         width: 100%;
         height: auto;
+    }
+
+    #leftFooter #logo {
+        display: none;
+    }
+
+    footer {
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+
+        font-size: 1.4rem;
+        line-height: 2.5rem
+    }
+
+        footer .footerSection {
+            padding-top: 10%;
+        }
+
+        footer #leftFooter {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer #rightFooter {
+            max-width: 50%;
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
+
+        .footerSection #footerButtons {
+            padding-top: 0%;
+        }
+
+    .map {
+        margin: 3% 0;
+    }
+
+    .difficultyGroup p#exemption {
+        padding: 0%;
     }
 }
