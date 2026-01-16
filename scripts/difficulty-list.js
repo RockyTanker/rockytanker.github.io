@@ -97,10 +97,18 @@ function compileData() {
         map.querySelector(".infoLayout").querySelector("#creators").innerText = mapData["Overview"][2]
         map.querySelector(".youtubeVideo").src = "https://www.youtube.com/embed/" + extractVideoId(mapData["Overview"][4])
 
+        var mapLabels = map.querySelector(".infoLayout").querySelector("#labels")
+        mapLabels.querySelector("#awards").src = "../assets/TRIA/Awards/" + mapData["Meta"][1] + ".png"
+
+        for (let i = 0; i < mapData["Meta"][0].length; i++) {
+            mapLabels.querySelector("#skill" + mapData["Meta"][0][i]).style.opacity = "100%"
+        }
+        
         document.querySelector("#listScroller").appendChild(map)
     }
 
-    console.log("Complete")
+    console.log(listArray)
+    console.log("Complete! Loaded " + listArray.length + " maps.")
 }
 
 var dataLog = [

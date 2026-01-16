@@ -15,15 +15,28 @@ a {
 
 body {
     font-family: "Gontserrat Regular";
+    background-image: url(../../assets/TRIA/DifficultyListBG.png);
+    background-size: cover;
 }
 
 body html {
   height: 100%;
 }
 
+#footer {
+    width: 100%;
+    height: 40px; /* sample height only */
+    background-color: black;
+    
+    /* Border */
+    border-image-slice: 1;
+    border-top: 10px solid;
+    border-image: linear-gradient(90deg, #ffb100 0%, #c800e9 100%) 1;
+}
+
 .map {
     padding: 3%;
-    margin: 3% 5%;
+    margin: 3% 5% 3% 50px;
     background-color: #00000086;
     
     border-style: dashed;
@@ -59,6 +72,15 @@ body html {
                 font-family: "Oxanium Regular";
                 color: rgb(255, 73, 73);
         }
+
+#labels img {
+    padding-top: 5%;
+    height: 40px;
+}
+
+#skill0, #skill1, #skill2, #skill3, #skill4, #skill5 {
+    opacity: 50%;
+}
 
 .addPadding {
     padding-left: 5%;
@@ -122,7 +144,7 @@ body html {
 
 #header {
     background-color: black;
-    height: 70px;
+    height: 10%;
     width: 100%;
 
     /* Border */
@@ -196,7 +218,7 @@ body html {
 }
 
 /* Downscale 1 */
-@media screen and (max-width: 895px) {
+@media screen and (max-width: 1149px) {
     
     #headerLeft {
         padding-left: 5%;
