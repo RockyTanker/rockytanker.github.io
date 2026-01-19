@@ -105,6 +105,13 @@ footer {
         padding-top: 5%;
     }
 
+.expandIcon {
+    position: fixed;
+    right: 5%;
+    max-height: 25px;
+    max-width: 25px;
+}
+
 .map {
     padding: 3%;
     margin: 3% 5% 3% 50px;
