@@ -106,6 +106,7 @@ footer {
     }
 
 .expandIcon {
+    display: none;
     position: fixed;
     right: 5%;
     max-height: 25px;
