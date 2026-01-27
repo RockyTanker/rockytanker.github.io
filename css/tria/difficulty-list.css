@@ -162,7 +162,7 @@ footer {
     display: flex;
     align-items: center;
     height: 40px;
-    font-family: "Oxanium";
+    font-family: "Oxanium Regular";
     font-size: 1.5rem;
     margin-bottom: 5px;
 }
@@ -184,7 +184,7 @@ footer {
     }
 
 #contributorCategory {
-    font-family: "Oxanium";
+    font-family: "Oxanium Regular";
     font-size: 1.4rem;
 }
 
