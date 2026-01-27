@@ -121,9 +121,7 @@ var dataLog = [
         Meta: {
             SkillCode: "",
             HasAwards: "",
-            IS_SOUNDWAVE_APPROVED: 0,
-            IS_AQUARII_APPROVED: 0,
-            IS_ETHAR67_APPROVED: 0
+            HasMedal: ""
         },
         Victors: ""
     }
