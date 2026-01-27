@@ -105,6 +105,89 @@ footer {
         padding-top: 5%;
     }
 
+.bulletinCard {
+    width: 100%;
+    border: 3px solid;
+    margin-bottom: 4%;
+}
+
+    #bHeader {
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 6%;
+        padding-bottom: 3%;
+
+        white-space: nowrap;
+        line-height: 1.6rem;
+    }
+
+        #bHeader #category {
+            font-family: "Gontserrat Regular";
+            font-size: 1rem;
+        }
+
+        #bHeader #name {
+             font-family: "Gontserrat Semibold";
+            font-size: 2.4rem;
+        }
+
+            #bButtons {
+                display: flex;
+                margin: 0 5%;
+                justify-content: space-around;
+                padding-bottom: 5%;
+
+                align-items: center;
+                text-align: center;
+            }
+
+                #bButtons a {
+                    background-color: #575757;
+                    border-radius: 100px;
+                    width: 100%;
+                    padding: 2%;
+                }
+
+                    #bButtons a:hover {
+                    background-color: #383838;
+                }
+
+    #bBody {
+        padding: 5%;
+        font-size: 1.2rem;
+    }
+
+
+.contributorCard {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-family: "Oxanium";
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+    .contributorCard img {
+        height: 100%;
+    }
+
+    .contributorCard#maintainers {
+        background-color: #00ff4c25;
+    }
+
+    .contributorCard#management {
+        background-color: #ff00d425;
+    }
+
+    .contributorCard#mapRankingJudges {
+        background-color: #ffa60025;
+    }
+
+#contributorCategory {
+    font-family: "Oxanium";
+    font-size: 1.4rem;
+}
+
 .expandIcon {
     display: none;
     position: fixed;
@@ -295,6 +378,10 @@ footer {
 /* Downscale 1 */
 @media screen and (max-width: 1042px) {
     
+    #bulletin {
+        width: 100%;
+    }
+
     #header {
         justify-content: center;
     }
