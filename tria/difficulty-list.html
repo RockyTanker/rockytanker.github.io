@@ -44,27 +44,80 @@
                 <p id="exemption">[7.00+]</p>
             </div>
 
-            <div class="map" id="template">
-                <iframe class="youtubeVideo" height="100%" src="https://www.youtube.com/embed/QDcnJeGoRWU" title="Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <div class="infoLayout">
-                    <div id="creators">you know who</div>
-                    <div id="mapName">
-                        <p id="rating">#1 [6.7]</p>
-                        <p id="name">this a template pls</p>
-                    </div>
-                    <div id="labels">
-                        <img id="awards" src="../assets/TRIA/Awards/0.png">
-                        <img id="skill0" src="../assets/TRIA/Skills/0.png">
-                        <img id="skill1" src="../assets/TRIA/Skills/1.png">
-                        <img id="skill2" src="../assets/TRIA/Skills/2.png">
-                        <img id="skill3" src="../assets/TRIA/Skills/3.png">
-                        <img id="skill4" src="../assets/TRIA/Skills/4.png">
-                        <img id="skill5" src="../assets/TRIA/Skills/5.png">
+            <div class="map" id="template" onclick="expandDetails(this)">
+                <div class="normalLayout">
+                    <iframe class="youtubeVideo" height="100%" src="https://www.youtube.com/embed/QDcnJeGoRWU" title="Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="infoLayout">
+                        <div id="lowerDetails">
+                            <div id="id">1234ABC</div>
+                            <p id="creators">you know who</p>
+                        </div>
+                        
+                        <div id="upperDetails">
+                            <p id="rating">#1 [6.7]</p>
+                            <p id="name">this a template pls</p>
+                        </div>
+                        <div id="labels">
+                            <img id="awards" src="../assets/TRIA/Awards/0.png">
+                            <img id="skill0" src="../assets/TRIA/Skills/0.png">
+                            <img id="skill1" src="../assets/TRIA/Skills/1.png">
+                            <img id="skill2" src="../assets/TRIA/Skills/2.png">
+                            <img id="skill3" src="../assets/TRIA/Skills/3.png">
+                            <img id="skill4" src="../assets/TRIA/Skills/4.png">
+                            <img id="skill5" src="../assets/TRIA/Skills/5.png">
+                        </div>
                     </div>
                 </div>
-                <svg class="expandIcon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707m4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707"/>
-                </svg>
+                <div id="divider"></div>
+                <div class="expandedLayout">
+                    <div id="tenVictors">
+                        <div id="victorCategory">FIRST 10 VICTORS</div>
+                        <div class="victorCard" id="v0">RockyTanker</div>
+                        <div class="victorCard" id="v1">RockyTanker</div>
+                        <div class="victorCard" id="v2">RockyTanker</div>
+                        <div class="victorCard" id="v3">RockyTanker</div>
+                        <div class="victorCard" id="v4">RockyTanker</div>
+                        <div class="victorCard" id="v5">RockyTanker</div>
+                        <div class="victorCard" id="v6">RockyTanker</div>
+                        <div class="victorCard" id="v7">RockyTanker</div>
+                        <div class="victorCard" id="v8">RockyTanker</div>
+                        <div class="victorCard" id="v9">RockyTanker</div>
+                        <div class="victorPlaceholder">Cannot be displayed</div>
+                    </div>
+                    <div id="otherInfo">
+                        <div id="title">Statistics</div>
+                        <div id="container">
+                            <div id="descriptionContainer">
+                                <div id="medalStatus"><img src="../assets/TRIA/Medal/No.png"> &nbsp; N/A</div>
+                                <p id="description">
+                                    <span style="font-family: 'Gontserrat Semibold';">Description</span><br>
+                                    <span id="descriptionText">N/A</span>
+                                    <br><br>
+                                    <span style="font-family: 'Gontserrat Semibold'">Music</span><br>
+                                    <span id="music">N/A</span>
+                                    <br>
+                                    <span style="font-family: 'Gontserrat Semibold';">Published</span><br>
+                                    <span id="date">N/A</span>
+                                </p>
+                                <a id="titleBlock">ALEPH ONE</a>
+                            </div>
+                            <div id="stats">
+                                <div id="buttonCount">
+                                    <p>N/A</p>
+                                    <a>Button Count</a>
+                                </div>
+                                <div id="mapLength">
+                                    <p>N/A</p>
+                                    <a>Map Length</a>
+                                </div>
+                                <div id="instances">
+                                    <p>N/A</p>
+                                    <a>Instances</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div id="divine" class="difficultyGroup">
@@ -146,11 +199,8 @@
                 <div id="bBody">
                     Welcome to the TRIA Difficulty List! The webpage is currently in progress of migrating its existing data to the new system so that this page can accurately display the list rankings.<br><br>
 
-                    The following has been added:<br>
-                    - Functioning bulletin board (placeholder at the very bottom)<br>
-                    - Replaced verified icon with TRIA tick (courtesty of Cametized)<br><br>
-
-                    That's pretty much it. Cheers<br>
+                    The expanded layout has now been added to support additional data for maps. However, the current database hasn't been fully migrated to the new format, so all the info from the expanded layout is empty for now. You can click on a map card to view its expanded details.<br><br>
+                    
                     - RockyTanker
                 </div>
             </div>
@@ -263,7 +313,7 @@
             </div>
 
             <!-- ignore this -->
-            <div class="bulletinCard" style="border-color: #07ca00;">
+            <div class="bulletinCard" id="lastBulletin" style="border-color: #07ca00;">
                 <div id="bHeader" style="background-color: #00e9322d;">
                     <a id="category">category testing</a><br>
                     <a id="name">ignore this</a>

@@ -87,16 +87,55 @@ function compileData() {
         map.id = i
 
         // Customize data
-        var mapName = map.querySelector(".infoLayout").querySelector("#mapName")
-        mapName.querySelector("#rating").style.color = diffColors[6 - currentDifficulty]
-        mapName.querySelector("#rating").innerText = "#" + (i + 1) + " [" + mapData["Overview"][0] + "] "
-        mapName.querySelector("#name").innerText = mapData["Overview"][1]
+        var upperDetails = map.querySelector(".infoLayout").querySelector("#upperDetails")
+        var lowerDetails = map.querySelector(".infoLayout").querySelector("#lowerDetails")
+
+        upperDetails.querySelector("#rating").style.color = diffColors[6 - currentDifficulty]
+        upperDetails.querySelector("#rating").innerText = "#" + (i + 1) + " [" + mapData["Overview"][0] + "] "
+        upperDetails.querySelector("#name").innerText = mapData["Overview"][1]
         
-        map.querySelector(".infoLayout").querySelector("#creators").innerText = mapData["Overview"][2]
+        lowerDetails.querySelector("#creators").innerText = "by " + mapData["Overview"][2]
+        lowerDetails.querySelector("#id").innerText = mapData["Overview"][3]
+
         map.querySelector(".youtubeVideo").src = "https://www.youtube.com/embed/" + extractVideoId(mapData["Overview"][4])
 
         var mapLabels = map.querySelector(".infoLayout").querySelector("#labels")
         mapLabels.querySelector("#awards").src = "../assets/TRIA/Awards/" + mapData["Meta"][1] + ".png"
+
+        // Awards
+        switch (mapData["Meta"][1]) {
+            
+            case "1":
+                map.querySelector(".youtubeVideo").style.border = "2px solid"
+                map.querySelector(".youtubeVideo").style.borderImageSlice = "1"
+                map.querySelector(".youtubeVideo").style.borderImage = "linear-gradient(45deg, #ff00aa 0%, #ffee00 100%) 1"
+                
+                break;
+            case "2":
+                map.querySelector(".youtubeVideo").style.border = "2px solid"
+                map.querySelector(".youtubeVideo").style.borderImageSlice = "1"
+                map.querySelector(".youtubeVideo").style.borderImage = "linear-gradient(45deg, #ff6600 0%, #eeff00 100%) 1"
+                
+                break;
+            default:
+                map.querySelector(".youtubeVideo").style.border = "2px solid"
+                map.querySelector(".youtubeVideo").style.borderColor = "#ffffff"
+
+                break;
+        }
+
+        // Expanded Layout
+        map.querySelector("#titleBlock").innerText = mapData["Overview"][1]
+
+        // Victors
+        if (mapData["Victors"]) {
+            map.querySelector("#tenVictors").querySelector(".victorPlaceholder").style.display = "none"
+
+            for (let i = 0; i < mapData["Victors"].length; i++) {
+                map.querySelector("#tenVictors").querySelector("#v" + i).style.display = "flex"
+                map.querySelector("#tenVictors").querySelector("#v" + i).innerText = "[#" + (i + 1) + "] " + mapData["Victors"][i]
+            }
+        }
 
         for (let i = 0; i < mapData["Meta"][0].length; i++) {
             mapLabels.querySelector("#skill" + mapData["Meta"][0][i]).style.opacity = "100%"
@@ -121,13 +160,37 @@ var dataLog = [
         Meta: {
             SkillCode: "",
             HasAwards: "",
-            HasMedal: ""
+            HasMedal: "",
+            MapLength: "",
+            Instances: "",
+            Buttons: "",
+            Music: "",
+            Date: ""
         },
         Victors: ""
     }
 ]
 
-// Switch page on mobile
+// Expand information
+var currentlyExpanded
+function expandDetails(source) {
+    if (currentlyExpanded == source) {
+        source.querySelector(".expandedLayout").style.display = "none"
+        source.querySelector("#divider").style.display = "none"
+        currentlyExpanded = ""
+    } else {
+        if (currentlyExpanded) {
+            currentlyExpanded.querySelector("#divider").style.display = "none"
+            currentlyExpanded.querySelector(".expandedLayout").style.display = "none"
+        }
+
+        source.querySelector(".expandedLayout").style.display = "flex"
+        source.querySelector("#divider").style.display = "flex"
+        currentlyExpanded = source
+    }
+}
+
+// Switch page on mobile or smaller screens
 var currentPage = "list"
 
 function switchPage(viewSection) {
@@ -172,3 +235,32 @@ addEventListener("resize", function() {
         }
     }
 })
+
+// Check scroll even
+/*
+
+var lastObject = document.querySelector('#lastBulletin');
+var hideBulletinOnScroll = false
+var savePosition
+
+window.onscroll = function(){
+    //BOTTOM
+    if(lastObject.getBoundingClientRect().bottom <= 0){
+        document.querySelector("#scrollers").querySelector("#bulletin").style.display = "none"
+
+        if (hideBulletinOnScroll == false) {
+            savePosition = window.scrollY;
+            hideBulletinOnScroll = true
+        }
+    }
+    
+    if (savePosition > window.scrollY) {
+        document.querySelector("#scrollers").querySelector("#bulletin").style.display = "block"
+        document.querySelector("#scrollers").querySelector("#listScroller").style.width = "100%"
+        document.querySelector("#scrollers").querySelector("#listScroller").style.transition = "ease-out 500ms"
+        
+        hideBulletinOnScroll = false
+    }
+}
+    
+*/
