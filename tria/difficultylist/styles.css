@@ -1,0 +1,180 @@
+/* Fonts */
+@font-face {
+    font-family: 'Impact';
+    src: url(./assets/fonts/impact.ttf);
+}
+
+@font-face {
+    font-family: 'Gen Shin Gothic';
+    src: url(./assets/fonts/Gen\ Shin\ Gothic\ Heavy.ttf);
+}
+
+@font-face {
+    font-family: 'Cascadia Code';
+    src: url(./assets/fonts/CascadiaCode.ttf);
+}
+
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url(./assets/fonts/RobotoSlab-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Roboto Slab Extrabold';
+    src: url(./assets/fonts/RobotoSlab-ExtraBold.ttf);
+}
+/* Scrollbar */
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+/* Header */
+.header {
+    position: absolute;
+    display: block;
+
+    height: 10vh;
+    width: 100%;
+
+    z-index: 10000;
+    background-image: linear-gradient(#00000080, #00000000);
+}
+
+.headerBtn {
+    padding: 1vh 1vw 1vh 1vw;
+
+    text-decoration: none;
+    background: none;
+    border: none;
+    color: white;
+
+    font-family: 'Gen Shin Gothic';
+    font-size: 1.2rem;
+
+    transition: ease-in 200ms;
+    user-select: none;
+}
+
+    .headerBtn:hover {
+
+        background: white;
+        color: black;
+    }
+
+    .headerBtn:active {
+        background: rgb(107, 107, 107);
+        color: black;
+        transition: none;
+    }
+
+.headerImgBtn {
+    padding: 1vh 0.6vw 1vh 0.6vw;
+    transition: ease-in 200ms;
+}
+
+    .headerImgBtn:hover {
+        opacity: 50%;
+    }
+
+.headerBtns, .socials {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+}
+
+.socials {
+    margin-right: 1vw;
+}
+.leftAligned {
+    float: left;
+    justify-content: left;
+}
+
+.rightAligned {
+    float: right;
+    justify-content: right;
+}
+
+/* Body */
+body {
+
+    background-color: #252525;
+    margin: 0%;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    color: white;
+
+    font-family: 'Gen Shin Gothic';
+}
+
+.addPadding {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+/* Footer */
+.footer {
+    background-color: #17171A;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    bottom: 0;
+}
+
+.footerClm {
+    flex-direction: column;
+    padding: 2vh 2vw 4vh 2vw;
+    font-size: 3rem;
+    color: #333333;
+    transition: ease-in 200ms;
+}
+
+.footerClm:hover {
+    color: rgb(0, 128, 255);
+}
+
+.footerClms {
+    font-family: Impact;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+
+.footerClmTitle {
+    font-family: Impact;
+    font-size: 2.2rem;
+
+    background: -webkit-linear-gradient(#696969, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footerList {
+    font-size: 1rem;
+    font-family: 'Cascadia Code';
+    font-weight: lighter;
+    color: white;
+    user-select: none;
+}
+
+.footerSpecialList {
+    width: 20vw; 
+    text-align: right; 
+
+    border-color: #D9D9D9;
+    border-style: solid; 
+    border-width: 0 0.1vw 0 0;
+    padding-right: 1vw;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footerList a:hover {
+
+    color: wheat;
+}

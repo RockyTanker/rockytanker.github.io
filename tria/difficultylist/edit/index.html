@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TDL Editor</title>
+  <link rel="icon" href="../assets/other/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div id="popup" style="display: none;">
+  <b>
+    
+  </b>
+    <input id="confirm" type="button" value="OK" onclick="closePopup()"></input>
+  </div>
+</div>
+<div id="dialog" style="display: none;">
+  <b>Question</b>
+  <div id="dialogButtons">
+    <input id="yes" type="button" value="Yes"></input>
+    <input id="no" type="button" value="No"></input>
+  </div>
+</div>
+<div id="wrapContainer">
+  <div id="ribbon">
+    <b onclick="newFile()">New</b>
+    <a>|</a>
+    <b onclick="importData()">Open</b>
+    <a>|</a>
+    <b onclick="saveData()">Save</b>
+    <a>|</a>
+    <b onclick="getAbout()">About</b>
+  </div>
+
+  <!-- Entire page wrapped to account for vh errors -->
+  <div id="screen">
+    <!-- Map Search, Map List, Entry Buttons -->
+    <div id="leftWrapper">
+      <input id="searchBar" type="text" placeholder="Search for a map here..." onchange="searchMaps(this)"></input>
+      <div id="mapListWrapper">
+
+        <!-- Map List -->
+        <div id="mapList">
+          <div class="entry" id="entryTemplate" style="display: none;" onmouseenter="hoverEntry(this)" onmouseleave="hoverExit(this)" onmousedown="mouseDown(this)" onmouseup="mouseUp(this)" onclick="viewEntry(this)">
+            <b id="metadata" style="display: none;"> <!-- wtf am i doing LMFAO -->
+              <a id="name">My New Map</a>
+              <a id="rating">0.00</a>
+              <a id="id"></a>
+              <a id="creators"></a>
+              <a id="link"></a>
+              <a id="published"></a>
+              <a id="music"></a>
+              <a id="length">0</a>
+              <a id="instances">0</a>
+              <a id="buttons">0</a>
+              <a id="hasWalljumps"></a>
+              <a id="hasWallruns"></a>
+              <a id="hasDive"></a>
+              <a id="hasLinear"></a>
+              <a id="hasMomentum"></a>
+              <a id="hasOrbs"></a>
+              <a id="hasMedal"></a>
+              <a id="isFeatured"></a>
+              <a id="isRevolutionary"></a>
+              <a id="description">Put yo description here</a>
+            </b>
+            <div class="infoContainer">
+              <div class="arrowIcon">
+                <img src="../assets/other/mapSelectionArrow.png" style="display: none;"></img>
+              </div>
+              <div class="textField">
+                <div class="entryRating">[0.00]</div>
+                <div class="entryName">My New Map</div>
+              </div>
+            </div>
+            <div class="backgroundContainer"></div>
+          </div>
+        </div>
+
+        <div id="editorButtons">
+          <input id="createButton" type="button" value="Add New" onclick="createEntry()"></input>
+          <input id="deleteButton" type="button" value="Delete" onclick="deleteEntry()"></input>
+        </div>
+      </div>
+    </div>
+
+    <!-- Editor and Information -->
+    <div id="rightWrapper">
+      <div id="editor">
+        <div id="cover" style="display: none;">
+          <div id="inputContainer">
+            <b>YouTube Link</b>
+            <div id="inputField">
+              <input id="updateButton" type="button" value="UPDATE" onclick="updateCover()"></input>
+              <input id="link" type="text" placeholder="YouTube Link" onchange="editEntry(this)"></input>
+            </div>
+          </div>
+          <div id="coverContainer"></div>
+        </div>
+        <div id="editorContainer" style="display: none;">
+          <div id="topLeft">
+            <h2>// Main</h2>
+            <div class="inputCard">
+              <b>Rating</b>
+              <input id="rating" type="text" placeholder="0.00" onchange="editEntry(this)"></input>
+            </div>
+            <div class="inputCard">
+              <b>Map Name</b>
+              <input id="name" type="text" placeholder="Name" onchange="editEntry(this)"></input>
+            </div>
+            <div class="inputCard">
+              <b>ID</b>
+              <input id="id" type="text" placeholder="abc123" onchange="editEntry(this)"></input>
+            </div>
+            <div class="inputCard">
+              <b>Creators</b>
+              <input id="creators" type="text" placeholder="User1, User2, User3" onchange="editEntry(this)"></input>
+            </div>
+          </div>
+          <div id="topRight">
+            <h2>Selection \\</h2>
+            <b>Medal</b>
+            <div class="selectionContainer">
+              <img id="noMedal" draggable="false" src="../assets/medal/No.png" onclick="editSelection(this)">
+              <img id="hasMedal" draggable="false" src="../assets/medal/Yes.png" onclick="editSelection(this)">
+            </div>
+            <br>
+            <b>Awards</b>
+            <div class="selectionContainer">
+              <img id="verified" draggable="false" src="../assets/awards/0.png" onclick="editSelection(this)">
+              <img id="featured" draggable="false" src="../assets/awards/1.png" onclick="editSelection(this)">
+              <img id="revolutionary" draggable="false" src="../assets/awards/2.png" onclick="editSelection(this)">
+            </div>
+            <br>
+            <b>Skills</b>
+            <div class="selectionContainer">
+              <img id="walljumps" draggable="false" src="../assets/skills/0.png" onclick="editSelection(this)">
+              <img id="wallruns" draggable="false" src="../assets/skills/1.png" onclick="editSelection(this)">
+              <img id="diving" draggable="false" src="../assets/skills/2.png" onclick="editSelection(this)">
+              <img id="linearSliding" draggable="false" src="../assets/skills/3.png" onclick="editSelection(this)">
+              <img id="momentumSliding" draggable="false" src="../assets/skills/4.png" onclick="editSelection(this)">
+              <img id="orbs" draggable="false" src="../assets/skills/5.png" onclick="editSelection(this)">
+            </div>
+          </div>
+          <div id="bottomLeft">
+            <h2>// Technical</h2>
+            <div class="inputCard">
+              <b>Published</b>
+              <input id="published" type="text" placeholder="MM/DD/YYYY" onchange="editEntry(this)"></input>
+            </div>
+            <div class="inputCard">
+              <b>Music</b>
+              <input id="music" type="text" placeholder="Artist - Song Name" onchange="editEntry(this)"></input>
+            </div>
+            <div class="inputCard">
+              <b>Length</b>
+              <input id="length" type="text" placeholder="12:34" onchange="editEntry(this)"></input>
+            </div>
+            <div class="inputCard">
+              <b>Instances</b>
+              <input id="instances" type="text" placeholder="1200" onchange="editEntry(this)"></input>
+            </div>
+            <div class="inputCard">
+              <b>Buttons</b>
+              <input id="buttons" type="text" placeholder="10" onchange="editEntry(this)"></input>
+            </div>
+          </div>
+          <div id="bottomRight">
+            <h2>Description \\</h2>
+            <div class="inputCard" id="descExemption">
+              <textarea id="description" type="text" placeholder="This map absolutely sucks!" onchange="editEntry(this)"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="header">
+        <div id="mainHeader">
+          <b id="title1">TRIA DIFFICULTY LIST EDITOR </b><b id="title2">by RockyTanker</b>
+          <br>
+          <b id="quote"><em>Quote here</em></b>
+        </div>
+        <img src="../assets/other/tdlLogo.png">
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script src="index.js"></script>
+</html>

@@ -2,23 +2,23 @@
 
 @font-face {
     font-family: "Gontserrat Regular";
-    src: url(../../assets/fonts/Gontserrat\ Regular.ttf);
+    src: url(assets/fonts/Gontserrat\ Regular.ttf);
 }
 
 @font-face {
     font-family: "Gontserrat Semibold";
-    src: url(../../assets/fonts/Gontserrat\ Semibold.ttf);
+    src: url(assets/fonts/Gontserrat\ Semibold.ttf);
 }
 
 
 @font-face {
     font-family: "Oxanium Regular";
-    src: url(../../assets/fonts/Oxanium\ Regular.ttf);
+    src: url(assets/fonts/Oxanium\ Regular.ttf);
 }
 
 @font-face {
     font-family: "Oxanium Bold";
-    src: url(../../assets/fonts/Oxanium\ Bold.ttf);
+    src: url(assets/fonts/Oxanium\ Bold.ttf);
 }
 
 a {
@@ -28,13 +28,60 @@ a {
 
 body {
     font-family: "Gontserrat Regular";
-    background-image: url(../../assets/TRIA/DifficultyListBG.png);
+    background-image: url(assets/other/DifficultyListBG.png);
     background-size: cover;
+
+    background-color: #252525;
+    margin: 0%;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    color: white;
 }
 
 body html {
   height: 100%;
 }
+
+/* imported from styles.css */
+/* Header */
+.header {
+    position: absolute;
+    display: block;
+
+    height: 10vh;
+    width: 100%;
+
+    z-index: 10000;
+    background-image: linear-gradient(#00000080, #00000000);
+}
+
+.headerBtn {
+    padding: 1vh 1vw 1vh 1vw;
+
+    text-decoration: none;
+    background: none;
+    border: none;
+    color: white;
+
+    font-family: 'Gen Shin Gothic';
+    font-size: 1.2rem;
+
+    transition: ease-in 200ms;
+    user-select: none;
+}
+
+    .headerBtn:hover {
+
+        background: white;
+        color: black;
+    }
+
+    .headerBtn:active {
+        background: rgb(107, 107, 107);
+        color: black;
+        transition: none;
+    }
 
 footer {
     width: 100%;
@@ -132,7 +179,7 @@ footer {
         }
 
         #bHeader #name {
-             font-family: "Gontserrat Semibold";
+            font-family: "Gontserrat Semibold";
             font-size: 2.4rem;
         }
 
@@ -188,6 +235,10 @@ footer {
         background-color: #ffa60025;
     }
 
+    .contributorCard#retiredJudges {
+        background-color: #ff000025;
+    }
+
 #contributorCategory {
     font-family: "Oxanium Regular";
     font-size: 1.4rem;
@@ -225,28 +276,53 @@ footer {
     }
 
 .map {
-    padding: 3%;
     margin: 3% 5% 3% 50px;
-    background-color: #00000086;
     
+    display: grid;
+
     border-style: dashed;
     border-color: #a7a7a7;
     border-radius: 20px;
+
     flex-direction: column;
 }
+
+    .map .thumbnailContainer {
+        grid-column: 1;
+        grid-row: 1;
+
+        filter: brightness(20%);
+        background-position: 50%;
+        background-size: cover;
+
+        border-radius: 20px;
+    }
+
+    .map .mainContainer {
+        z-index: 3;
+        padding: 3%;
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+        .map .mainContainer:hover {
+            background-color: #4d4d4d86;
+            border-radius: 20px;
+            transition: ease-in 100ms;
+        }
 
     .map .normalLayout {
         display: flex;
         flex-direction: row;
     }
 
-        .map:hover {
-            background-color: #4d4d4d86;
-            transition: ease-in 100ms;
-        }
-
         .youtubeVideo {
+            max-width: 40%;
+            width: 100%;
+            height: 150px;
             align-self: center;
+            background-position: 50%;
+            background-size: cover;
         }
 
         /* KEEP THIS DISABLED UNLESS YOU NEED TO EDIT SMTH */
@@ -284,42 +360,20 @@ footer {
             .infoLayout #upperDetails p {
                 display: inline;
                 margin-block: unset;
+                text-overflow: ellipsis;
+
                 font-size: 5rex;
             }
+
                 .infoLayout #upperDetails #rating {
                     font-family: "Oxanium Regular";
                     color: rgb(255, 73, 73);
-            }
+                }
 
-        .expandedLayout {
-            display: none;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-
-            #divider {
+            #otherInfo {
                 display: none;
-                margin-top: 1.5%;
-                margin-bottom: 1.5%;
-                border-top: 2px dashed;
-                border-color: #ffffff;
                 width: 100%;
-            }
-
-            .expandedLayout #tenVictors {
-                border: 3px solid;
-                border-color: #ffffff1f;
-                width: 100%;
-                margin-right: 1%;
-                padding: 2%;
-            }
-
-            .expandedLayout #otherInfo {
-                border: 3px solid;
-                border-color: #ffffff1f;
-                width: 100%;
-                margin-left: 1%;
-                padding: 2%;
+                margin-top: 3%;
                 flex-direction: column;
             }
 
@@ -407,6 +461,7 @@ footer {
 
 #labels img {
     padding-top: 5%;
+    margin-right: 1%;
     height: 40px;
 }
 
@@ -637,8 +692,8 @@ p {
     }
 
     .youtubeVideo {
-        width: 100%;
-        height: auto;
+        min-width: 100%;
+        height: 120px;
     }
 
     #leftFooter #logo {
