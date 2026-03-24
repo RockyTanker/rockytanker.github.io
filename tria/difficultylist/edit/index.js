@@ -5,7 +5,7 @@ const cover = document.querySelector("#cover")
 const editorContainer = document.querySelector("#editorContainer")
 const dialog = document.querySelector("#dialog")
 const popup = document.querySelector("#popup")
-const githubMirror = "https://raw.githubusercontent.com/RockyTanker/TDL-App/refs/heads/main/Main%20List"
+const githubMirror = "https://raw.githubusercontent.com/Ethan76167/TRIA.OS-Difficulty-List/refs/heads/main/Main%20List"
 var currentlyViewing
 
 // Get youtube URL
