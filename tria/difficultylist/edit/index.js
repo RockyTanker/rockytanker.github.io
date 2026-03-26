@@ -200,10 +200,10 @@ function editSelection(field) {
       break;
     case "wallruns":
       if (field.style.opacity == "0.5") {
-        data.querySelector("#hasWalljumps").innerText = "#"
+        data.querySelector("#hasWallruns").innerText = "#"
         field.style.opacity = "100%"
       } else {
-        data.querySelector("#hasWalljumps").innerText = ""
+        data.querySelector("#hasWallruns").innerText = ""
         field.style.opacity = "50%"
       }
       break;
